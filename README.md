@@ -1,7 +1,7 @@
 # MarmotApp
 Enable running large language models locally and privately.
 
-[[paper]()] [[slides]()][[video](https://youtube.com/shorts/6cPr3CRMUXQ)]
+[[paper](https://arxiv.org/abs/2503.03777)] [[video](https://youtube.com/shorts/6cPr3CRMUXQ)]
 
 ## Run with Limited Memory on Host
 * Create a new group for limited-memory case.
