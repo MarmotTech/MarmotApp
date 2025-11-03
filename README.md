@@ -1,7 +1,19 @@
+<div align="center">
+
 # MarmotApp
-Enable running large language models locally and privately.
+
+[![License](https://img.shields.io/badge/license-apache_2-blue)](https://github.com/MarmotTech/MarmotApp/blob/master/LICENSE)
+[![Related Repository: MarmotApp](https://img.shields.io/badge/Related_Repo-WebLLM-fafbfc?logo=github)](https://github.com/MarmotTech/MarmotApp)
+
+**Enable running large language models locally and privately.**
+
 
 [[paper](https://arxiv.org/abs/2503.03777)] [[video](https://youtube.com/shorts/6cPr3CRMUXQ)]
+
+</div>
+
+## About
+
 
 ## Run with Limited Memory on Host
 * Create a new group for limited-memory case.
