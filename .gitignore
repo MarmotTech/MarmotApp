@@ -13,6 +13,9 @@
 
 # Compiled Dynamic libraries
 *.so
+!libggml-prefetch.so
+!libllama-jni.so
+!libllama-prefetch.so
 *.dylib
 *.dll
 
