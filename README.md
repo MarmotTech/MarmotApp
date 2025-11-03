@@ -2,44 +2,115 @@
 
 # MarmotApp
 
-[![License](https://img.shields.io/badge/license-apache_2-blue)](https://github.com/MarmotTech/MarmotApp/blob/master/LICENSE)
-[![Related Repository: MarmotApp](https://img.shields.io/badge/Related_Repo-WebLLM-fafbfc?logo=github)](https://github.com/MarmotTech/MarmotApp)
+[![License](https://img.shields.io/badge/License-Apache_2-blue)](https://github.com/MarmotTech/MarmotApp/blob/master/LICENSE)
+[![Related Repository: MarmotApp](https://img.shields.io/badge/Related_Repo-MarmotApp-fafbfc?logo=github)](https://github.com/MarmotTech/MarmotApp)
 
-**Enable running large language models locally and privately.**
+[![iOS: TestFlight Ready](https://img.shields.io/badge/iOS-TestFlight_Ready-green)](https://forms.gle/eykCnWKzifPUJTPs7)
+[![Android: Libraries Supported](https://img.shields.io/badge/Android-Libraries_Supported-orange)](https://github.com/MarmotTech/MarmotApp/tree/master/andriod)
+[![Host: Libraries Supported](https://img.shields.io/badge/Host-Libraries_Supported-orange)](https://github.com/MarmotTech/MarmotApp/tree/master/host)
 
-
-[[paper](https://arxiv.org/abs/2503.03777)] [[video](https://youtube.com/shorts/6cPr3CRMUXQ)]
+**Enable running any large language models locally and privately.**
 
 </div>
 
-## About
+# About
 
+MarmotApp is a cutting-edge application that enables users to run any large language models locally on their devices, ensuring complete privacy and offline functionality. Our solution brings powerful AI capabilities to your fingertips without compromising data security.
 
-## Run with Limited Memory on Host
-* Create a new group for limited-memory case.
+# 🚀 Quick Start
+
+## 📱 iOS - Ready for Testing
+
+Our iOS app is available through [TestFlight](https://apps.apple.com/us/app/testflight/id899247664) for beta testing.
+
+To join the beta:
+
+1. Fill out our [Beta Tester Form](https://forms.gle/eykCnWKzifPUJTPs7).
+
+2. We'll send a TestFlight invitation to your Apple ID email.
+
+3. Install via TestFlight and start using locally!
+
+> Note: No App Store download required - direct TestFlight access.
+
+The source codes for building iOS applications can be found in [ios directory](https://github.com/MarmotTech/MarmotApp/tree/master/ios).
+
+## 🤖 Android - Libraries Available
+We currently provide pre-built executable files and corresponding libraries for Android. *A full Android app is coming soon.*
+
+### Setup via ADB
+Push executable files and corresponding libraries to Android device.
 ```bash
-sudo cgcreate -g memory:/limmem
+adb push android /data/local/tmp
+adb push ggml-model-llama-2-7b-chat-q4_0.gguf /data/local/tmp
 ```
 
-* Set the limits in bytes.
-Limit 2GB memory.
+Connect to device shell.
 ```bash
-sudo echo 2147483648 | sudo tee /sys/fs/cgroup/limmem/memory.max
+adb shell
 ```
 
-* Clear page cache.
+### Current Features
+**Text generation**
 ```bash
-sudo sh -c 'echo 1 >  /proc/sys/vm/drop_caches'
+cd /data/local/tmp
+LD_LIBRARY_PATH=android/lib/ ./android/bin/llama-cli-prefetch -m ggml-model-llama-2-7b-chat-q4_0.gguf -p "I believe the meaning of life is" -n 128 -t 4 -am 2 -tp 1 -c 512 -ngl 0
 ```
 
-* Run the program with limited memory.
+> Parameters: 
+> 1. `-m`: model path
+> 2. `-p`: prompt, if the prompt contains some special characters, we can use `-f` to indicate the file that contains the prompt
+> 3. `-n`: the number of tokens to generate
+> 4. `-t`: the number of computing threads
+> 5. `-am`: the available memory size
+> 6. `-tp`: the number of I/O threads
+> 7. `-c`: the context size
+> 8. `-ngl`: the number of layers computed on GPU (must set to 0, prefetching on GPU is not supported so far)
+
+**Chatting**
+
 ```bash
-sudo cgexec -g memory:limmem ./llama-cli -m hf-models/ggml-model-llama-2-70b-chat-q4_0.gguf -p "I believe the meaning of life is" -n 16
-sudo cgexec -g memory:limmem ./llama-cli-prefetch -m hf-models/ggml-model-llama-2-70b-chat-q4_0.gguf -p "I believe the meaning of life is" -n 16 -am 2.0 -tp 1
+cd /data/local/tmp
+LD_LIBRARY_PATH=android/lib/ ./android/bin/llama-cli-prefetch -m ggml-model-llama-2-7b-chat-q4_0.gguf -p "Your are a helpful assistant" -n 128 -t 4 -am 2 -tp 1 -c 512 -ngl 0 --cnv
 ```
 
-## Run for Android
+> Parameters: 
+> 1. `-p`: system prompt, if the system prompt contains some special characters, we can use `-spf` to indicate the file that contains the system prompt
+> 2. `-cnv`: conversation mode
+> 
+> other parameters are the same as the above
+
+**Speed Benchmarking**
+
 ```bash
-LD_LIBRARY_PATH=android/lib/ ./android/bin/llama-cli -m hf-models/ggml-model-llama-2-7b-chat-q4_0.gguf -p "I believe the meaning of life is" -n 128
-LD_LIBRARY_PATH=android/lib/ ./android/bin/llama-cli-prefetch -m hf-models/ggml-model-llama-2-7b-chat-q4_0.gguf -p "I believe the meaning of life is" -n 128 -am 2 -tp 1 -t 1
+cd /data/local/tmp
+LD_LIBRARY_PATH=android/lib/ ./android/bin/llama-bench -m ggml-model-llama-2-7b-chat-q4_0.gguf -p 16 -n 16 -t 4 -am 2 -tp 1 -ngl 0
+```
+
+> Parameters: 
+> 1. `-p`: the prompt length for benchmarking
+> 2. `-n`: the generation length for benchmarking
+> 
+> other parameters are the same as the above
+
+## 🖥️ Desktop - Executable Ready
+
+We also provides executable files and corresponding libraries to serve LLMs directly on your host machine.
+
+### Current Features
+**Text generation**
+```bash
+LD_LIBRARY_PATH=host/lib/ ./host/bin/llama-cli-prefetch -m ggml-model-llama-2-7b-chat-q4_0.gguf -p "I believe the meaning of life is" -n 128 -t 4 -am 2 -tp 1 -c 512 -ngl 0
+```
+
+**Chatting**
+
+```bash
+LD_LIBRARY_PATH=host/lib/ ./host/bin/llama-cli-prefetch -m ggml-model-llama-2-7b-chat-q4_0.gguf -p "Your are a helpful assistant" -n 128 -t 4 -am 2 -tp 1 -c 512 -ngl 0 --cnv
+```
+
+**Speed Benchmarking**
+
+```bash
+LD_LIBRARY_PATH=host/lib/ ./host/bin/llama-bench -m ggml-model-llama-2-7b-chat-q4_0.gguf -p 16 -n 16 -t 4 -am 2 -tp 1 -ngl 0
 ```
