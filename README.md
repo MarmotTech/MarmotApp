@@ -114,3 +114,46 @@ LD_LIBRARY_PATH=host/lib/ ./host/bin/llama-cli-prefetch -m ggml-model-llama-2-7b
 ```bash
 LD_LIBRARY_PATH=host/lib/ ./host/bin/llama-bench -m ggml-model-llama-2-7b-chat-q4_0.gguf -p 16 -n 16 -t 4 -am 2 -tp 1 -ngl 0
 ```
+
+# Todo List
+- [ ] Release Android application.
+- [ ] Supporting prefetching techniques on GPU
+    - [ ] Mail GPU
+    - [ ] Metal GPU
+- [ ] Supporting chatting history management
+- [ ] Supporting more downstream task
+
+# Citations
+Please consider citing our project if you find it useful:
+```bibtex
+@software{marmotapp,
+    author = {{MarmotTech}},
+    title = {{MarmotApp}},
+    url = {https://github.com/MarmotTech/MarmotApp},
+    year = {2025}
+}
+```
+
+The underlying techniques of MarmotApp include:
+
+```bibtex
+@inproceedings{euromlsys-flexinfer,
+    author       = {Hongchao Du and
+                    Shangyu Wu and
+                    Arina Kharlamova and
+                    Nan Guan and
+                    Chun Jason Xue},
+    editor       = {Eiko Yoneki and
+                    Amir H. Payberah},
+    title        = {FlexInfer: Breaking Memory Constraint via Flexible and Efficient Offloading
+                    for On-Device {LLM} Inference},
+    booktitle    = {Proceedings of the 5th Workshop on Machine Learning and Systems, EuroMLSys
+                    2025, World Trade Center, Rotterdam, The Netherlands, 30 March 2025-
+                    3 April 2025},
+    pages        = {56--65},
+    publisher    = {{ACM}},
+    year         = {2025},
+    url          = {https://doi.org/10.1145/3721146.3721961},
+    doi          = {10.1145/3721146.3721961},
+}
+```
