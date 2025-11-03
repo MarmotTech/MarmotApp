@@ -8,5 +8,5 @@ platformdirs==4.2.2
 protobuf==4.25.5
 sentencepiece==0.2.0
 tomli==2.0.1
-torch==2.2.2
+torch==2.8.0
 transformers==4.49.0
