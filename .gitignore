@@ -40,3 +40,4 @@ __pycache__/
 *.log
 *.csv
 hf-models/
+.DS_Store

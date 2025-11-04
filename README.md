@@ -17,6 +17,33 @@
 
 MarmotApp is a cutting-edge application that enables users to run any large language models locally on their devices, ensuring complete privacy and offline functionality. Our solution brings powerful AI capabilities to your fingertips without compromising data security.
 
+# Preview
+<div style="position: relative; width: 100%; max-width: 200px; margin: 20px auto; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+    <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+        <div style="flex: 0 0 auto; width: 100%; scroll-snap-align: start;">
+            <img src="docs/pics/main.PNG" alt="main interface" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div style="flex: 0 0 auto; width: 100%; scroll-snap-align: start;">
+            <img src="docs/pics/chatting_setting.PNG" alt="Chatting Setting" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div style="flex: 0 0 auto; width: 100%; scroll-snap-align: start;">
+            <img src="docs/pics/chatting.PNG" alt="Chatting" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div style="flex: 0 0 auto; width: 100%; scroll-snap-align: start;">
+            <img src="docs/pics/manage_models.PNG" alt="Manage Models" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div style="flex: 0 0 auto; width: 100%; scroll-snap-align: start;">
+            <img src="docs/pics/benchmarking_setting.PNG" alt="Benchmarking Setting" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div style="flex: 0 0 auto; width: 100%; scroll-snap-align: start;">
+            <img src="docs/pics/benchmarking.PNG" alt="Benchmarking" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div style="flex: 0 0 auto; width: 100%; scroll-snap-align: start;">
+            <img src="docs/pics/benchmarking_results.PNG" alt="Benchmarking Results" style="width: 100%; height: auto; display: block;">
+        </div>
+    </div><!-- Navigation Dots -->
+</div>
+
 # 🚀 Quick Start
 
 ## 📱 iOS - Ready for Testing
