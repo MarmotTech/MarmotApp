@@ -18,7 +18,7 @@
 MarmotApp is a cutting-edge application that enables users to run any large language models locally on their devices, ensuring complete privacy and offline functionality. Our solution brings powerful AI capabilities to your fingertips without compromising data security.
 
 # Preview
-<p float="middle">
+<p align="middle">
   <img src="docs/pics/main.PNG" width="100" />
   <img src="docs/pics/chatting_setting.PNG" width="100" />
   <img src="docs/pics/chatting.PNG" width="100" />
