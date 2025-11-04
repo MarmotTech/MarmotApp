@@ -63,7 +63,7 @@ To join the beta:
 The source codes for building iOS applications can be found in [ios directory](https://github.com/MarmotTech/MarmotApp/tree/master/ios).
 
 ## 🤖 Android - Libraries Available
-We currently provide pre-built executable files and corresponding libraries for Android. *A full Android app is coming soon.*
+We currently provide pre-built executable files and corresponding libraries for Android in [android directory](https://github.com/MarmotTech/MarmotApp/tree/master/android). *A full Android app is coming soon.*
 
 ### Setup via ADB
 Push executable files and corresponding libraries to Android device.
@@ -122,7 +122,7 @@ LD_LIBRARY_PATH=android/lib/ ./android/bin/llama-bench -m ggml-model-llama-2-7b-
 
 ## 🖥️ Desktop - Executable Ready
 
-We also provides executable files and corresponding libraries to serve LLMs directly on your host machine.
+We also provides executable files and corresponding libraries in [host directory](https://github.com/MarmotTech/MarmotApp/tree/master/host) to serve LLMs directly on your host machine.
 
 ### Current Features
 **Text generation**
@@ -149,6 +149,9 @@ LD_LIBRARY_PATH=host/lib/ ./host/bin/llama-bench -m ggml-model-llama-2-7b-chat-q
     - [ ] Metal GPU
 - [ ] Supporting chatting history management
 - [ ] Supporting more downstream task
+
+# Feedback & Issue Reporting
+We value your feedback and are committed to improving MarmotApp. If you encounter any issues or have suggestions, please report them through our [GitHub Issues](https://github.com/MarmotTech/MarmotApp/issues).
 
 # Citations
 Please consider citing our project if you find it useful:
