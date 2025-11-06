@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-Apache_2-blue)](https://github.com/MarmotTech/MarmotApp/blob/master/LICENSE)
 [![Related Repository: MarmotApp](https://img.shields.io/badge/Related_Repo-MarmotApp-fafbfc?logo=github)](https://github.com/MarmotTech/MarmotApp)
 
-[![iOS: TestFlight Ready](https://img.shields.io/badge/iOS-TestFlight_Ready-green)](https://forms.gle/eykCnWKzifPUJTPs7)
+[![iOS: TestFlight Ready](https://img.shields.io/badge/iOS-TestFlight_Ready-green)](https://testflight.apple.com/join/V7VSYtSG)
 [![Android: Libraries Supported](https://img.shields.io/badge/Android-Libraries_Supported-orange)](https://github.com/MarmotTech/MarmotApp/tree/master/andriod)
 [![Host: Libraries Supported](https://img.shields.io/badge/Host-Libraries_Supported-orange)](https://github.com/MarmotTech/MarmotApp/tree/master/host)
 
@@ -36,7 +36,7 @@ Our iOS app is available through [TestFlight](https://apps.apple.com/us/app/test
 
 To join the beta:
 
-1. Fill out our [Beta Tester Form](https://forms.gle/eykCnWKzifPUJTPs7).
+1. Fill out our [Beta Tester Form](https://testflight.apple.com/join/V7VSYtSG).
 
 2. We'll send a TestFlight invitation to your Apple ID email.
 
